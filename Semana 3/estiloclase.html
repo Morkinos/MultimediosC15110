@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Clase</title>
+    <style>
+       /* Palabra que encuentre como base
+       [class|= primera]{
+            background-color: aqua;
+        }*/
+        /*Palabra que la encuentre meclada
+        [class ^=primera]{
+            background-color: beige;
+        }*/
+        /*Cuando finalice con la palabra
+        [class$=test]{
+            background-color: lightpink;
+        }*/
+        /*Cuando contenga una plabra especifica*/
+        [class *="a"]{
+            background-color: plum;
+        }
+        input[type="text"]{
+            width: 120px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            background-color: bisque;
+
+        }
+    </style>
+</head>
+<body>
+    <h1 class="test-primera-titulo">Titulo</h1>
+    <p class="primeraparrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam rem tempora velit eaque quae fuga culpa iste consequatur iure. Est commodi eum obcaecati animi exercitationem totam autem deserunt amet fugit.</p>
+    <p class="primera-test">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat corporis id cupiditate, maiores sint cum? Itaque esse sequi natus, ab cumque eveniet qui provident, adipisci accusamus dolorum totam commodi expedita?</p>
+    <p class="primeratest">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam voluptas eligendi enim, illum officiis labore incidunt iure accusamus minus odio itaque nemo impedit ratione sit obcaecati aperiam dignissimos ipsum temporibus.</p>
+    <label for="Nombre">Nombre</label>
+    <input type="text" name="nombre" id="nombre">
+    <label for="Nombre">Apellido</label>
+    <input type="text" name="Apellido" id="apellido">
+</body>
+</html>
