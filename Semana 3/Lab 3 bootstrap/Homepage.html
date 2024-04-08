@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>Inicio</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+
+        <!-- Bootstrap CSS v5.2.1 -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+        />
+        <style>
+            .colorFondo{
+                background-color: rgb(63, 5, 5);
+                opacity: 75%;
+            }
+            .img{
+                width: 30px;
+                height: 30px;
+                float: left;
+                
+            }
+            .footer{
+                Background-color: #333;
+                opacity: 30%;
+                color: #fff; 
+                padding: 20px; 
+                text-align: center;
+                position: fixed; 
+                bottom: 0; 
+                width: 100%; 
+            }
+            .contenedorEnlaces{
+               
+                text-align: center;
+                margin: 0 5px;
+                display: flex;
+                justify-content: center;
+            }
+            .imgCarrousel{
+                width: 50%;
+                height: 25%;
+                display: flex;
+                justify-content: center;
+            }
+            .centrar {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <nav
+                class="navbar navbar-expand-sm navbar-dark bg-primary"
+            >
+                <a class="navbar-brand" href="Homepage.html">Inicio</a>
+                <button
+                    class="navbar-toggler d-lg-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId"
+                    aria-controls="collapsibleNavId"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                ></button>
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="Contacto.html" aria-current="page"
+                                >Contactanos <span class="visually-hidden">(current)</span></a
+                            >
+                        </li>
+                       
+                        <li class="nav-item dropdown">
+                            <a
+                                class="nav-link dropdown-toggle"
+                                href="#"
+                                id="dropdownId"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >Nosotros</a
+                            >
+                            <div class="dropdown-menu" aria-labelledby="dropdownId">
+                                <a class="dropdown-item" href="Productos.html">Productos</a>
+                                <a class="dropdown-item" href="Sobrenosotros.html">Sobre Nosotros</a>
+                            </div>
+                        </li>
+                    </ul>
+                   
+                </div>
+            </nav>
+            
+        </header>
+        <main >
+            <div class="centrar">
+            <h1>Cine Fox</h1>
+            <div id="carouselId" class="carousel slide imgCarrousel" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="0"
+                        class="active"
+                        aria-current="true"
+                        aria-label="First slide"
+                    ></li>
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="1"
+                        aria-label="Second slide"
+                    ></li>
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="2"
+                        aria-label="Third slide"
+                    ></li>
+                    <li
+                        data-bs-target="#carouselId"
+                        data-bs-slide-to="3"
+                        aria-label="Four slide"
+                    ></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img
+                            src="img/spyxfamily.jpg"
+                            class="w-100 d-block"
+                            alt="First slide"
+                        />
+                        <div class="carousel-caption d-md-block colorFondo">
+                            <h3>Spy x Family</h3>
+                            <p>Estreno</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="img/Cazafantasmas.jpg"
+                            class="w-100 d-block"
+                            alt="Second slide"
+                        />
+                        <div class="carousel-caption d-md-block colorFondo nombrepeli">
+                            <h3>Ghost Busters</h3>
+                            <p>Preventa</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item ">
+                        <img
+                            src="img/laprofecia.jpg"
+                            class="w-100 d-block"
+                            alt="Third slide"
+                        />
+                        <div class="carousel-caption  d-md-block colorFondo nombrepeli">
+                            <h3>La Profecía</h3>
+                            <p>Estreno</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img
+                            src="img/kunfupanda.jpg"
+                            class="w-100 d-block"
+                            alt="Four slide"
+                        />
+                        <div class="carousel-caption d-md-block colorFondo">
+                            <h3>Kung fu Panda 4</h3>
+                            <p>Preventa</p>
+                        </div>
+                    </div>
+                </div>
+                <button
+                    class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="prev"
+                >
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                    class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#carouselId"
+                    data-bs-slide="next"
+                >
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+            
+            <div class="card text-start">
+                <img class="card-img-top" src="img/Godzilla.jpg" alt="Godzilla y Kong: El nuevo imperio" />
+                <div class="card-body">
+                    <h3 class="card-title">Mas vendida</h3>
+                    <h4 class="card-title">Godzilla y Kong: El nuevo imperio</h4>
+                    <p class="card-text">Esta es la pelicula mas taquillera del mes, aprovecha y disfrutala!</p>
+                </div>
+            </div>
+            
+
+        </main>
+        <footer class="footer">
+            <div>
+                <p>Copyright © 2024 Cinefox. All rights reserved.</p>
+                <div class="contenedorEnlaces">
+                    <a href="https://www.facebook.com/cinefox" target="_blank"><img src="img/face.jpg" alt="Facebook" class="img"></a>
+                    <a href="https://www.twitter.com/cinefox" target="_blank"><img src="img/Twiter.jpg" alt="Twitter" class="img"></a>
+                    <a href="https://www.instagram.com/cinefox" target="_blank"><img src="img/insta.jpg" alt="Instagram" class="img"></a>
+                </div>
+            </div>
+        </footer>
+        <!-- Bootstrap JavaScript Libraries -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
+    </body>
+</html>
