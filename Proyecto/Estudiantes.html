@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>Listar Usuarios</title>
+        <title>Listar Estudiantes</title>
         <!-- Required meta tags -->
         <meta charset="utf-8" />
         <meta
@@ -16,14 +16,15 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="css/styles.css">
     </head>
 
     <body>
         <div
             class="container-fluid"
         >
-            <header>
-                <div id="menu">
+            <header class="header" id="navbar">
+                <div >
 
                 </div>       
             </header>
@@ -34,7 +35,7 @@
                     <div
                         class="row "
                     >
-                        <h1>Lista de Usuarios</h1>
+                        <h1>Lista de Estudiantes</h1>
 
                         <div
                             class="table-responsive"
@@ -51,18 +52,26 @@
                                 class="table table-striped table-hover table-borderless table-primary align-middle"
                             >
                                 <thead class="table-light">
-                                    <caption>
-                                        Usuarios
-                                    </caption>
+                                 
                                     <tr>
                                         <th>Id</th>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Password</th>
-                                        <th>Acciones</th>
+                                        <th>Cedula</th>
+                                        <th>Correo electronico</th>
+                                        <th>Telefono</th>
+                                        <th>Celular</th>
+                                        <th>Fecha de nacimiento</th>
+                                        <th>Sexo</th>
+                                        <th>Direccion</th>
+                                        <th>Nombre</th>
+                                        <th>Apellido Paterno</th>
+                                        <th>Apellido Materno</th>
+                                        <th>Carreras</th>
+                                        <th>Usuario</th>
+                                        <th>Nacionalidad</th>
+
                                     </tr>
                                 </thead>
-                                <tbody class="table-group-divider" id="tablausuarios">
+                                <tbody class="table-group-divider" id="tablaEstudiantes">
                         
                                 </tbody>
                                 <tfoot>
@@ -139,7 +148,7 @@
 
 
         <!-- Modal Body -->
-<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+
 <div
 class="modal fade"
 id="modalEdicion"
@@ -172,53 +181,130 @@ aria-hidden="true"
             
 
             <form id="formularioEditar">
+                
                 <div class="mb-3">
                     <label for="" class="form-label">Id</label>
                     <input type="hidden" id="id" name="id">
                     <span id="idEditar"></span>
                     
-                </div>                
+                </div>   
+
                 <div class="mb-3">
-                    <label for="" class="form-label">Name</label>
-                    <input type="hidden" id="id" name="id">
+                    <label for="" class="form-label">Cedula</label>
                     <input
                         type="text"
                         class="form-control"
-                        name="name"
-                        id="name"
+                        name="cedula"
+                        id="cedula"
                         aria-describedby="helpId"
                         placeholder=""
                         required
                     />
-                    <small id="helpId" class="form-text text-muted">Nombre</small>
-                </div>
+                    <small id="helpId" class="form-text text-muted">cedula</small>
+                </div>   
+
                 <div class="mb-3">
-                    <label for="" class="form-label">password</label>
-                    <input
-                        type="text"
-                        class="form-control"
-                        name="password"
-                        id="password"
-                        aria-describedby="helpId"
-                        placeholder=""
-                        required
-                    />
-                    <small id="helpId" class="form-text text-muted">Contraseña</small>
-                </div>
-                <div class="mb-3">
-                    <label for="" class="form-label">email</label>
+                    <label for="" class="form-label">Email</label>
                     <input
                         type="email"
                         class="form-control"
-                        name="email"
-                        id="email"
+                        name="correoelectronico"
+                        id="correoelectronico"
                         aria-describedby="helpId"
                         placeholder=""
                         required
-                        disabled
                     />
                     <small id="helpId" class="form-text text-muted">Email</small>
                 </div>    
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Telefono</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        name="telefono"
+                        id="telefono"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                    />
+                    <small id="helpId" class="form-text text-muted">Telefono</small>
+                </div>    
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Telefono Celular</label>
+                    <input type="tel" class="form-control" name="telefonocelular" id="telefonocelular"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">telefono celular</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label"> Fecha de nacimiento</label>
+                    <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">fecha nacimiento</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Sexo</label>
+                    <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId"
+                        placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">sexo</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Direccion</label>
+                    <input type="text" class="form-control" name="direccion" id="direccion"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">direccion</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                        placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">nombre</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Apellido Paterno</label>
+                    <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">apellido paterno</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Apellido Materno</label>
+                    <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">apellido materno</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label"> Numero de Carrera</label>
+                    <input type="number" class="form-control" name="idCarreras" id="idCarreras"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">id de la Carreras</small>
+                </div>
+
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Usuario</label>
+                    <input type="text" class="form-control" name="usuario" id="usuario"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">usuario</small>
+                </div>
+
+                <div class="mb-3">
+                    <label for="" class="form-label">Nacionalidad</label>
+                    <input type="text" class="form-control" name="nacionalidad" id="nacionalidad"
+                        aria-describedby="helpId" placeholder="" required />
+                    <small id="helpId" class="form-text text-muted">nacionalidad</small>
+                </div>
+                
+                </div>
+
+
                 <div class="mb-3">
                     
                     <button
@@ -262,7 +348,7 @@ aria-hidden="true"
             crossorigin="anonymous"
         ></script>
 
-        <script src="js/menu.js"></script>
-        <script src="js/usuarios.js"></script>
+        <script src="js/Opciones.js"></script>
+        <script src="js/estudiantes.js"></script>
     </body>
 </html>

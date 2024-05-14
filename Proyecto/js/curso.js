@@ -1,18 +1,20 @@
 //Propiedades
-let tablausuarios = document.querySelector("#tablausuarios");
+let tablaCursos = document.querySelector("#tablacurso");
 let mensajes = document.querySelector("#mensajes");
 
 let url = "https://paginas-web-cr.com/Api/apis/";
-let listar = "ListaUsuarios.php";
-let insertar = "InsertarUsuarios.php";
-let actualizar = "ActualizarUsuarios.php";
+let listar = "ListaCurso.php";
+let insertar = "InsertarCursos.php";
+let actualizar = "ActualizarCursos.php";
+let Eliminar = "BorrarCursos.php"
 
 let formulario = document.getElementById("formulario");
 let formularioEditar = document.getElementById("formularioEditar");
 
 let nombrePagina = document.title;
-let listarPagina = "Listar Usuarios";
-let crearPagina = "Crear";
+
+let listarPaginaCurs= "Listar Curso";
+let crearPagina = "Crear Curso";
 
 let spinner = `
             <button
@@ -33,8 +35,8 @@ let spinner = `
 
 if (!sessionStorage.getItem("token")) {
     location.href = "login.html"
-    console.log('pase por aca')
 }
+
 
 if (nombrePagina == crearPagina) {
 
@@ -46,9 +48,10 @@ if (nombrePagina == crearPagina) {
 
             let datosEnviar =
             {
-                name: datos.get('name'),
-                password: datos.get('password'),
-                email: datos.get('email')
+                nombre: datos.get('nombre'),
+                descripcion: datos.get('descripcion'),
+                tiempo: datos.get('tiempo'),
+                usuario: datos.get('usuario'),
             };
 
             fetch(url + insertar,
@@ -68,20 +71,24 @@ if (nombrePagina == crearPagina) {
 }
 
 
-if (nombrePagina == listarPagina) {
+if (nombrePagina == listarPaginaCurs) {
 
     formularioEditar.addEventListener("submit",
         function (evento) {
             evento.preventDefault();//evita la recarga de la pagina
 
             let datos = new FormData(formularioEditar);
-            console.log(datos)
+
             let datosEnviar =
             {
-                name: datos.get('name'),
-                password: datos.get('password'),
-                id: datos.get('id')
+                id: datos.get('id'),
+                nombre: datos.get('nombre'),
+                descripcion: datos.get('descripcion'),
+                tiempo: datos.get('tiempo'),
+                usuario: datos.get('usuario'),
             };
+
+            console.log(datosEnviar)
 
             console.log(url + actualizar,
                 {
@@ -109,12 +116,11 @@ if (nombrePagina == listarPagina) {
 
 //Metodos
 function cargar() {
-    tablausuarios.innerHTML = "";
+    tablaCursos.innerHTML = "";
     cargarspinner();
-    fetch(url + listar) //https://paginas-web-cr.com/Api/apis/ListaUsuarios.php
+    fetch(url + listar) 
         .then(repuesta => repuesta.json())
         .then((datosrepuestas) => {
-            //console.log(datosrepuestas)
             pintardatos(datosrepuestas)
         })
         .catch(console.log)
@@ -125,15 +131,17 @@ function pintardatos(objetodatos) {
     if (objetodatos.code == 200) {
         for (const item of objetodatos.data) {
             //console.log(item.id);
-            tablausuarios.innerHTML += `
+            tablaCursos.innerHTML += `
             <tr
             class="table-primary"
             >
                 <td scope="row">${item.id}</td>
-                <td>${item.name}</td>
-                <td>${item.email}</td>
-                <td>${item.password}</td>
+                <td>${item.nombre}</td>
+                <td>${item.descripcion}</td>
+                <td>${item.tiempo}</td>
+                <td>${item.usuario}</td>
                 <td>
+
                 <a
                     name=""
                     id=""
@@ -152,7 +160,6 @@ function pintardatos(objetodatos) {
                 >
                 </td>
             </tr>`;
-
         }
     }
 
@@ -202,14 +209,13 @@ function editar(datos) {
     const modalEdicion = new bootstrap.Modal(document.getElementById("modalEdicion"));
     modalEdicion.show();
 
-
-    document.getElementById("name").value = objeto.name;
-    document.getElementById("email").value = objeto.email;
     document.getElementById("id").value = objeto.id;
+    document.getElementById("nombre").value = objeto.nombre;
+    document.getElementById("descripcion").value = objeto.descripcion;
+    document.getElementById("tiempo").value = objeto.tiempo;
+    document.getElementById("usuario").value = objeto.usuario;
     document.getElementById("idEditar").innerHTML = objeto.id;
-
-    document.getElementById("password").value = "";
-
+  
 }
 
 
@@ -227,7 +233,7 @@ function editarDatos(datosrepuestas) {
         ></button>
         <strong>Modificacion exitosa</strong>
     </div>`;
-        setTimeout(cargar, 3000);
+        setTimeout(cargar, 2000);
     }
     else {
         mensajes.innerHTML = `<div
@@ -254,10 +260,33 @@ function eliminar(id) {
 }
 
 function modalConfirmacionEliminar() {
-    alert("eliminado");
+    let id = {
+        id: document.getElementById("idEliminarModal").value
+    }
+
+    fetch(url + Eliminar, {
+        method: 'DELETE',
+        body: JSON.stringify(id)
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.code)
+            if (data.code == 200) {
+
+                // Eliminación exitosa
+                alert("El registro ha sido eliminado correctamente.");
+                cargar(); // Actualizar la lista después de eliminar
+            } else {
+                // Manejar el error
+                alert("Hubo un error al eliminar el registro T_T.");
+            }
+        })
+        .catch(error => {
+            console.error('Error al eliminar el registro:', error);
+            alert("Hubo un error al eliminar el registro.");
+        });
 }
 
-
-if (nombrePagina == listarPagina) {
+if (nombrePagina == listarPaginaCurs) {
     cargar();
 }

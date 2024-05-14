@@ -65,14 +65,12 @@ if (nombrePagina == loginPagina) {
             )
                 .then(repuesta => repuesta.json())
                 .then((datosrespuestas) => {
-                    console.log(datosrespuestas.code)
 
                     if (datosrespuestas.code === 200) {
-                        console.log(datosrespuestas.data)
-                        // Guarda el token de sesión en localStorage
+                        
+                        // Guarda el token de sesión en Storage
                         sessionStorage.setItem('token', datosrespuestas.data);
-                        const sessionStor = sessionStorage.getItem('token')
-                        console.log(sessionStor)
+                        
                     }
                     insertarDatosLogin(datosrespuestas);
                 })
