@@ -1,0 +1,170 @@
+<script>
+    if (!sessionStorage.getItem("token")) {
+        location.href = "login.html"
+    }
+</script>
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Crear Estudiantes</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="header" id="navbar">
+            <div>
+
+            </div>
+        </header>
+        <main>
+            <div class="container-fluid min-vh-100">
+                <div class="row ">
+                    <h1>Estudiantes</h1>
+
+
+
+                    <form class="form" id="formulario">
+                        <div class="mb-3">
+                            <label for="" class="form-label">Cedula</label>
+                            <input type="text" class="form-control" name="cedula" id="cedula" aria-describedby="helpId"
+                                placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">Cedula</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Correo Eletronico</label>
+                            <input type="email" class="form-control" name="correoelectronico" id="correoelectronico"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">correo Electronico</small>
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label">Telefono</label>
+                            <input type="tel" class="form-control" name="telefono" id="telefono"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">telefono</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Telefono Celular</label>
+                            <input type="tel" class="form-control" name="telefonocelular" id="telefonocelular"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">telefono celular</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label"> Fecha de nacimiento</label>
+                            <input type="date" class="form-control" name="fechanacimiento" id="fechanacimiento"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">fecha nacimiento</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Sexo</label>
+                            <input type="text" class="form-control" name="sexo" id="sexo" aria-describedby="helpId"
+                                placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">sexo</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Direccion</label>
+                            <input type="text" class="form-control" name="direccion" id="direccion"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">direccion</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nombre</label>
+                            <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="helpId"
+                                placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">nombre</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Apellido Paterno</label>
+                            <input type="text" class="form-control" name="apellidopaterno" id="apellidopaterno"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">apellido paterno</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Apellido Materno</label>
+                            <input type="text" class="form-control" name="apellidomaterno" id="apellidomaterno"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">apellido materno</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label"> Numero de Carrera</label>
+                            <input type="number" class="form-control" name="idCarreras" id="idCarreras"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">id de la Carreras</small>
+                        </div>
+
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Usuario</label>
+                            <input type="text" class="form-control" name="usuario" id="usuario"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">usuario</small>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="" class="form-label">Nacionalidad</label>
+                            <input type="text" class="form-control" name="nacionalidad" id="nacionalidad"
+                                aria-describedby="helpId" placeholder="" required />
+                            <small id="helpId" class="form-text text-muted">nacionalidad</small>
+                        </div>
+
+                        <div class="mb-3" ">
+                            <button type=" reset" class="btn btn-danger ">
+                            Reset
+                            </button>
+                            <button type="submit" class="btn btn-primary  ">
+                                Enviar
+                            </button>
+
+                        </div>
+                    </form>
+                    <div id="mensajes">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+        <footer>
+            <!-- place footer here -->
+            <div id="piedepagina">
+
+            </div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script src="js/Opciones.js"></script>
+    <script src="js/estudiantes.js"></script>
+</body>
+
+</html>
