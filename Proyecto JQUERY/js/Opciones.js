@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function () {
     if (!sessionStorage.getItem("token")) {
         location.href = "login.html";
     }
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="Curso.html">Lista</a>
+                            <a class="dropdown-item" href="curso.html">Lista</a>
                             <a class="dropdown-item" href="cursoCrear.html">Crear</a>
                         </div>
                     </li>
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         </div>`;
 
-    document.getElementById("navbar").innerHTML = navbar;
+    $("#navbar").html(navbar);
 
     let piedepagina = `<footer class="footer">
         <ul class="social-icon">
@@ -129,21 +129,21 @@ document.addEventListener("DOMContentLoaded", function () {
         </ul>
         <p class="text_Footer">@2024 | Todos los derechos reservados</p>`;
 
-    document.getElementById("piedepagina").innerHTML = piedepagina;
+    $("#piedepagina").html(piedepagina);
 
     window.openNav = function() {
-        document.getElementById("mobile-menu").style.width = "100%";
+        $("#mobile-menu").css("width", "100%");
     };
 
     window.closeNav = function() {
-        document.getElementById("mobile-menu").style.width = "0%";
+        $("#mobile-menu").css("width", "0%");
     };
 
     window.cerrarSesion = function() {
         console.log('Attempting to log out');
         console.log('Current token:', sessionStorage.getItem("token"));
         sessionStorage.removeItem("token");
-        window.location.href ="login.html"
+        window.location.href ="login.html";
         console.log('Token after removal:', sessionStorage.getItem("token"));
     };
 });

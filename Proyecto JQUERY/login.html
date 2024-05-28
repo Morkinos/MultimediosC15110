@@ -22,9 +22,7 @@
 
     <body>
         <header>
-            <div id="menu">
-                
-            </div> 
+            <div id="menu"></div> 
         </header>
 
         <main>
@@ -36,23 +34,19 @@
 
                     <div class="login_content">
                         <div class="login_box login_text">
-
                             <i class="ri-user-3-line login_icon"></i>
-
-                            <div class="login_box-input ">
-                                <input type="email" required class="login_input" id="loginemail" placeholder="" name="loginemail">
-                                <label for="" class="login_label login_text">Email</label>
+                            <div class="login_box-input">
+                                <input type="email" required class="login_input" id="loginemail" name="loginemail" autocomplete="username">
+                                <label for="loginemail" class="login_label login_text">Email</label>
                             </div>
                         </div>
 
                         <div class="login_box login_text">
                             <i class="ri-lock-2-line login_icon"></i>
-
                             <div class="login_box-input">
-                                <input type="password" required class="login_input" id="loginpass" placeholder=" " name="loginpass">
-                                <label for="" class="login_label">Password</label>
+                                <input type="password" required class="login_input" id="loginpass" name="loginpass" autocomplete="current-password">
+                                <label for="loginpass" class="login_label">Password</label>
                                 <i class="ri-eye-off-fill login_eye" id="logineye"></i>
-
                             </div>
                         </div>
                     </div>
@@ -68,20 +62,15 @@
 
                     <button type="submit" class="login_button">Login</button>
 
-                    <div id="seccionSpinner" class="login_button_alert"> 
-                
-                    </div>
-                    <div id="mensajes">
-
-                    </div>
+                    <div id="seccionSpinner" class="login_button_alert"></div>
+                    <div id="mensajes"></div>
                     
-                   <!-- <p class="login_register" >
+                   <!-- <p class="login_register">
                         No tienes cuenta? <a href="">Registrate</a>
                     </p>-->
                 </form>
             </div>
         </main>
-
 
         <footer>
             <!-- place footer here -->
